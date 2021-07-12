@@ -18,3 +18,9 @@ Tested on Mac 11.3 and windows10
 
 To export a bin file from stm32duino, select your "upload method" to be 2.2 HID, then "Sketch" ---> "Export compiled Binary", 
 This saved the .bin file in the arduino folder the sketch is on. 
+
+
+NOTES:
+Separated the Serial to HID mode control form the rest of the flashing prosejure. Incase you corrupt your main program, and serial does not worlk so you use the "boot button: method to get into HID mode. 
+
+Top box shows the file you selected, Bottom box shows the upload process. 
