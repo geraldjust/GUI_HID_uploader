@@ -7,7 +7,7 @@ https://processing.org/
 
 Written in Java, with hidapi java wrapper. You need to install "ControlP5" by doing the following:
 click : "Sketch"(on menu bar) ---> "import library" -----> "add library..."
-Once you open dialog box, look for "ControlP5" adn install. 
+Once you open dialog box, look for "ControlP5" and install. 
 
 open the PDE file and run! 
 
