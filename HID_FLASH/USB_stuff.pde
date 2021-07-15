@@ -105,7 +105,12 @@ public void Flashing_action() {
 
     for (int i = 0; i < SECTOR_SIZE; i += HID_TX_SIZE ) {
 
-      System.arraycopy(opened_file, n_bytes, hid_tx_buf, 0, HID_TX_SIZE );
+      if ( opened_file.length - n_bytes > HID_TX_SIZE ){
+        System.arraycopy(opened_file, n_bytes, hid_tx_buf, 0, HID_TX_SIZE );//copy full 64bytes
+      } else if (opened_file.length - n_bytes > 0){//copy over last bytes of file becuase less than 64
+        System.arraycopy(opened_file, n_bytes, hid_tx_buf, 0, opened_file.length - n_bytes );//reach EOF
+      }
+
       deviceWrite(hid_tx_buf);
       //clear buffer
       for (int ia=0; ia< hid_tx_buf.length; ia++) { hid_tx_buf[ia]= 0; }
